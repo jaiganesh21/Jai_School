@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page2</title>
+</head>
+<body style="background-image : url('{% static 'assets/n4.png' %}'); border: 6px solid black;">
+	<I><h1 style="text-align: center;color: red; font-size :30px">
+		--------------- Register ---------------
+	</h1></I>
+	<form method="POST" action="/fun/">
+				{% csrf_token %}
+
+<label for="name" style="font-size: 20px; margin-left: 40px;">
+		NAME :
+	</label>
+<input type="text" name="name" id="name" style="margin-left: 130px; width: 230px; height: 18px; margin-top: 25px;"placeholder="Enter Your Name" required><br>
+
+
+<label for="em" style="font-size: 20px; margin-left: 40px;">
+		E-MAIL-ID :
+	</label>
+<input type="text" name="em" id="em" style="margin-left: 95px; width: 400px; height: 18px; margin-top: 40px;"placeholder="Enter Your E-mail_id" required><br>
+
+<label for="sec" style="font-size: 20px; margin-left: 40px;">
+		DOB :
+	</label>
+<input type="date" name="sec" id="sec" style="margin-left: 150px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your Date Of Birth" required><br>
+
+<label for="age" style="font-size: 20px; margin-left: 40px;">
+		AGE :
+	</label>
+<input type="text" name="age" id="age" style="margin-left: 150px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your Age" required><br>
+
+<label for="ph" style="font-size: 20px; margin-left: 40px;">
+		PHONE-NO :
+	</label>
+<input type="number" name="ph" id="ph" style="margin-left: 88px; width: 230px; height: 17px; margin-top: 27px;"placeholder="Enter Your Phone-no" required><br>
+
+<label for="add" style="font-size: 20px; margin-left: 40px; ">
+		ADDRESS :
+	</label>
+<textarea  rows="5" cols="30" name="add" id="add" style="margin-left: 100px; margin-top: 27px;"placeholder="Enter Your address" required></textarea><br>
+
+<label for="uname" style="font-size: 20px; margin-left: 40px;">
+	USERNAME :
+	</label>
+<input type="text" name="uname" id="uname" style="margin-left: 85px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your UserName" required><br>
+
+
+<label for="password" style="font-size: 20px; margin-left: 40px;">
+		PASSWORD :
+	</label>
+<input type="password"  onkeyup="au()" name="password" id="password" style="margin-left: 90px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your password" required><br><br><br>
+
+<label for="cpassword" style="font-size: 18px; margin-left: 40px;">
+		CONFIRMPASSWORD :
+	</label>
+<input type="password"  onkeyup="au()"  name="cpassword" id="cpassword" style="margin-left: 20px; width: 230px; height: 18px; margin-top: 0px;"placeholder="Enter Your password" required><br><br><br>
+
+
+<h1 style=" margin-top: 300;">
+	Designation:
+</h1><br>
+
+<label for="te" style="font-size: 20px; margin-right: -100px;">
+		Teacher :
+	</label>
+<input type="radio" value="teacher" name="te" id="te" style="margin-left: 10px; width: 230px; height: 18px; margin-top: -0px;">
+
+<label for="ho" style="font-size: 20px; margin-right: -100px;">
+		Hod :
+	</label>
+<input type="radio" value="hod" name="te" id="ho" style="margin-left: 10px; width: 230px; height: 18px; margin-top: -0px;">
+
+<label for="sd" style="font-size: 20px; margin-right: -100px;">
+		Student :
+	</label>
+<input  type="radio" value="student" name="te" id="sd" style="margin-left: 6px; width: 230px; height: 18px; margin-top: -0px;">
+
+
+<input  onclick="run()" disabled type="submit" name="lb" id="lb" value="Register Now" style="margin-left: 620px; width: 120px; height: 35px; margin-top: 27px;background-color: skyblue; font-size: 16px;"><br><br>
+
+</form>
+
+<script>
+	function run()
+	{
+	alert ("successfully registered.!");
+	}
+
+	function au()
+	{
+		var a= document.getElementById('password').value;
+		var b= document.getElementById('cpassword').value;
+		var c= document.getElementById('lb');
+		if(a==b)
+		{
+			c.disabled = false;
+		}
+		else
+			c.disabled = true;
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login page</title>
+</head>
+<body style="background-image : url('{% static 'assets/abi.webp' %}');">
+
+
+
+	<div style="float: left;">
+		<img src="{% static 'assets/p.png' %}" width="550px" style="margin-bottom: 50px; margin-left: -10px;">
+		<img src="{% static 'assets/ll.png' %}" width="650px" style="margin-left: -250px; margin-top: 60px;">
+	</div>
+	<div style="float: right;">
+		<img src="{% static 'assets/l.png' %}" width="500px" style="margin-top: -1000px; margin-bottom: 200px; margin-right: 70px">
+		<h1 style="margin-left: 190px; margin-top: -330px;" >
+			LOGIN
+		</h1><br><br>
+
+
+		<form method="POST" action="/gallary/">
+		{% csrf_token %}
+				
+		<label for="username" style="font-size: 25px; margin-right: -40px;">
+			Username :
+		</label>
+		<input type="text" name="username" id="username" style="margin-left: 150px; height: 20px;"placeholder="Enter Your Username" required><br><br><br>
+		<label for="password" style="font-size: 25px; margin-right: -40px;">
+			Password :
+		</label>
+		<input type="password" name="password" id="password" style="margin-left: 160px; height: 20px;"placeholder="Enter Your Username" required><br><br><br><br><br>
+		 <input onclick="abc()" type="button" name="c" value="sign up" style="margin-right: 10px; width: 100px; height: 25px;">
+		 <input type="submit"   name="lb" value="login" style="margin-left: 200px; width: 100px; height: 25px;">
+		</form>
+
+		{% if messages %}
+		<div style=" margin-left:140px;margin-top:50px; font-size:10px;">
+			{% for message in messages %}
+			<h1>
+				{{ message }}
+			</h1>
+			{%  endfor %}
+		</div>
+
+		{% endif %}
+	</div>
+<script>
+	function abc()
+	{
+	window.location.href ="/reg/";
+	}
+</script>
+</body>
+</html>
+
+ <!-- style="margin-top: 90px; margin-left: 530px; width: 100px; height: 30px; -->
+ <!-- style=" width: 100px; height: 30px; margin-left: 740px;margin-bottom:  150px;" -->

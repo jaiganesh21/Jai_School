@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher Data</title>
+</head>
+<body style="background-image: url('{% static 'assets/a1.jpg' %}'); ">
+
+	<h1 style="font-size: 50px;"><U><CENTER>
+		Teacher Data
+	</h1></U></CENTER>
+
+	<form method="POST" action="/saves/" enctype="multipart/form-data">
+		  	{% csrf_token %}
+
+<div style="float: right;">
+		<img src="{{ data_teacher.PROFILE.url }}" width="170px" style="margin-bottom: 50px; margin-left: 70px;">
+		<br>
+		<input type="file" id="photo" name="photo" style="margin-left:30px;">
+		<br>
+		<br>
+		<label for="id" style="font-size: 20px; ">
+		I'D :
+	</label>
+	<input type="text" readonly value="{{ data_teacher.REGNAME }}" style="margin-right: 100px; width: 230px; height: 18px; margin-bottom: 70px;"placeholder="Enter Your I'd">
+<input type="hidden"  name="id" id="id" value="{{ data_teacher.REGNAME }}" style="margin-right: 100px; width: 230px; height: 18px; margin-bottom: 70px;"placeholder="Enter Your I'd" required><br>
+
+	</div>
+
+
+<br>
+<label for="name" style="font-size: 20px; margin-left: 40px;">
+		NAME :
+	</label>
+<input type="text" name="name" id="name" value="{{ data_teacher.NAME }}" style="margin-left: 130px; width: 230px; height: 18px; margin-top: 25px;"placeholder="Enter Your Name" required><br>
+
+<br>
+
+<label for="em" style="font-size: 20px; margin-left: 40px;">
+		E-MAIL-ID :
+	</label>
+<input type="text" name="em" id="em" value="{{ data_teacher.MAIL }}" style="margin-left: 95px; width: 400px; height: 18px; margin-top: 40px;"placeholder="Enter Your E-mail_id" required><br>
+<br>
+
+<label for="sec" style="font-size: 20px; margin-left: 40px;">
+		DOB :
+	</label>
+<input type="date" name="sec" id="sec" value="{{ DOB }}" style="margin-left: 150px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your Date Of Birth" required><br>
+
+<br>
+
+<label for="age" style="font-size: 20px; margin-left: 40px;">
+		AGE :
+	</label>
+<input type="text" name="age" id="age" value="{{ data_teacher.AGE }}" style="margin-left: 150px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your Age" required><br>
+
+<br>
+
+<label for="ph" style="font-size: 20px; margin-left: 40px;">
+		PHONE-NO :
+	</label>
+<input type="number" name="ph" id="ph" value="{{ data_teacher.PHONE }}" style="margin-left: 88px; width: 230px; height: 17px; margin-top: 27px;"placeholder="Enter Your Phone-no" required><br>
+
+<br>
+
+<label for="Hod" style="font-size: 20px; margin-left: 40px;">
+	HOD I'D :
+	</label>
+<input type="text" name="Hod" id="Hod" value="{{ data_teacher.HOD_ID }}" style="margin-left: 115px; width: 230px; height: 18px; margin-top: 27px;"placeholder="Enter Your Hod_I'd" required><br>
+
+
+<div style="float: left;margin-top: 50px;margin-left:50px;">
+<input type="submit" name="lb" value="Save" style="background-color: olive; font-size: 16px;"><br><br>
+</div>
+
+<div style="float: right;margin-top: 50px;margin-right:50px;">
+<input onclick="homepage()" type="submit" name="hb" value="HomePage" style="background-color: olive; font-size: 16px;"><br><br>
+</div>
+
+
+</form>
+<script>
+	function homepage()
+	{
+	window.location.href = "/gallary/";
+	}
+</script>
+</body>
+</html>
